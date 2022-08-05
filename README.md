@@ -1,24 +1,27 @@
 # mongo-coupon-geoquery
 
 This project is setup with mongoose, node, express.
-It showcase working with mongo geoJson object, and geospatial query
+It uses mongo geoJson object, and geospatial query.
 
 ## How to run this project
 
 * Clone this repo
 * Do `npm install`
 * Add .env file similar to an .example.env provided
-* Change PORT and MongodbUrl in the env
+* Change **PORT** and **MongodbUrl** in the `.env` file.
 * Run command ` npm run start `
 
 ---
 ## This project has two apis endpoints :
 
 * **GET** : /api/v1/coupon
+  * To get coupons within a range of radius from a location.
   * require query parameter _{ latitude, longitude }_
   * In file _coupon.service.js_ , a variable  **maxDistanceInMeter** shows the search area in which the coupons will be searched based in given coordinates.
+  * Shows coupons which are not expired.
 
 * **POST** : /api/v1/coupon
+  * To add new coupon with location details. 
   * require req.body
   * ```
     // Example
@@ -36,3 +39,4 @@ It showcase working with mongo geoJson object, and geospatial query
         }
       }
        ```
+*Use node *v16*
